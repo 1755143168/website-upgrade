@@ -1,12 +1,12 @@
 <template>
   <div class="card">
     <div class="more">
-      <img src="../assets/image/viewmore.gif" alt="" />
+      <img :src="card.title" alt="" />
     </div>
     <div class="card_swiper">
       <swiper class="swiper" :options="swiperOption">
-        <swiper-slide v-for="item of itemList" :key="item.id">
-          <img :src="item.url" alt="" />
+        <swiper-slide v-for="item of card.img" :key="item.id">
+          <img :src="item" alt="" />
         </swiper-slide>
       </swiper>
       <div class="swiper-button-prev">
@@ -21,8 +21,10 @@ import { Swiper, SwiperSlide } from "vue-awesome-swiper";
 export default {
   components: { Swiper, SwiperSlide },
   name: "card",
+  props:["card_list"],
   data() {
     return {
+      card:this.card_list,
       swiperOption: {
         slidesPerView: "4",
         spaceBetween: 15,
@@ -35,14 +37,11 @@ export default {
           prevEl: ".swiper-button-prev",
         },
       },
-      itemList: [
-        { id: 1, url: require("../assets/image/swiper1.gif") },
-        { id: 2, url: require("../assets/image/swiper2.gif") },
-        { id: 3, url: require("../assets/image/swiper3.gif") },
-        { id: 4, url: require("../assets/image/swiper4.gif") },
-      ],
     };
   },
+  created(){
+    console.log(this.card_list)
+  }
 };
 </script>
 <style scoped>
