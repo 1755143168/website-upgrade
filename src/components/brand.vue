@@ -1,18 +1,19 @@
-<!--实效数字运营-->
+<!--定制化服务页-->
 <template>
   <scenarios :img="img"></scenarios>
 </template>
 <script>
 import scenarios from './scenarios.vue'
 export default {
-  name:'effective',
+  name:'brand',
   components:{scenarios},
   data() {
     return {
-      img:require("../assets/image/effective.gif")
+      img:require("../assets/image/brand.gif")
     }
   },
 }
 </script>
 <style scoped>
+
 </style>

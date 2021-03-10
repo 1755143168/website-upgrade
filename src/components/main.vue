@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="main">
     <el-row>
       <el-col :span="content" id="content">
         <navheader @neu="neu"></navheader>
         <maincontent></maincontent>
-        <page_bottom></page_bottom>
+        <pagebottom></pagebottom>
       </el-col>
       <el-col
         :span="side">
@@ -20,10 +20,10 @@
 import navheader from "./navheader.vue";
 import navside from "./navside.vue";
 import maincontent from "./maincontent.vue";
-import page_bottom from './page-bottom.vue'
+import pagebottom from './page-bottom.vue'
 export default {
   name: "Main",
-  components: { navheader, maincontent, navside, page_bottom},
+  components: { navheader, maincontent, navside, pagebottom},
   data() {
     return {
       isCollapse: false,

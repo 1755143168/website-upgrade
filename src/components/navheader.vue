@@ -33,10 +33,10 @@
         <el-menu-item index="9">我们</el-menu-item>
       </el-menu>
     </el-col>
-    <el-col :span="2">
+    <el-col class="earth" :span="2">
       <img src="../assets/image/earth.gif" alt="" />
     </el-col>
-    <el-col :span="3">
+    <el-col class="track" :span="3">
       <div class="menu-right">
         <div class="menu-right-top">
           <span>项目跟踪：</span>

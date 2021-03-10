@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <img src="../assets//image/map.gif" alt="" />
 </template>
 <script>
 export default {

@@ -47,7 +47,7 @@ export default {
 <style scoped>
 .card {
   width: 100%;
-  margin: 2vw 0 2vw 0; /**上，右，下，左 */
+  margin: 1vw 0 0 0; /**上，右，下，左 */
 }
 .card_swiper{
   position: relative;
