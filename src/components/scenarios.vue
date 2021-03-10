@@ -1,7 +1,8 @@
 /**应用场景 */
 <template>
   <div class="scenarios">
-    <img :src="img" alt="">
+    <img class="pcimg" :src="pcimg" alt="">
+    <img class="mobileimg" src="../assets/image/mobile/mobile-customized.gif" alt="">
   </div>
 </template>
 <script>
@@ -10,7 +11,8 @@ export default {
   props:['img'],
   data() {
     return {
-      img:this.img
+      pcimg:this.img,
+      mobileimg:"../assets/image/mobile/mobile-customized.gif"
     }
   },
   created(){
@@ -19,5 +21,8 @@ export default {
 }
 </script>
 <style scoped>
-
+.pcimg .mobileimg{
+  width: 100%;
+  height: auto;
+}
 </style>

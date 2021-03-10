@@ -79,6 +79,9 @@
   .el-menu--horizontal>.el-submenu .el-submenu__icon-arrow {
     position: absolute;
   }
+  .mobileimg{
+    display: none;
+  }
 }
 
 /*移动端*/
@@ -98,6 +101,9 @@
     display: none;
   }
   .track{
+    display: none;
+  }
+  .pcimg{
     display: none;
   }
 }
