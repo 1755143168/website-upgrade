@@ -1,6 +1,5 @@
-<!--悬浮菜单组件-->
 <template>
-  <div class="floatMenu">
+  <div class="footerMenu">
     <el-row :gutter="7">
       <el-col v-for="(item,index) in menulist" :key="index" :span="3">
         <span class="title">{{item.name}}
@@ -17,7 +16,7 @@
 </template>
 <script>
 export default {
-  name:"floatmenu",
+  name:'footerMenu',
   data() {
     return {
       menulist:[
@@ -29,13 +28,13 @@ export default {
         {name:'新闻',children_menu:[]},
         {name:'人才',children_menu:["企业文化","基本法","招聘职位"]},
         {name:'我们',children_menu:[]},
-        {name:'历史版本',children_menu:["空谷2012","空谷2014","空谷2016","空谷2018"]},
-        {name:'系统',children_menu:["售后Tapd"]},
       ]
     };
   },
 }
 </script>
 <style scoped>
-
+.footerMenu{
+  padding: 0 4vw 0 4vw;
+}
 </style>

@@ -84,6 +84,9 @@ export default {
 };
 </script>
 <style scoped>
+img{
+  display: block;/**解决底部留有空白 */
+}
 .illustration {
   position: relative;
 }

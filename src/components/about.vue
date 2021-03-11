@@ -61,6 +61,7 @@ export default {
 <style scoped>
 .about {
   display: flex;
+  overflow: hidden;
 }
 
 .new {

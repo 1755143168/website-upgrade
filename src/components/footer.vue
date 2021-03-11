@@ -1,11 +1,13 @@
+<!--页底组件-->
 <template>
   <div class="total">
     <div class="top">
-      <img src="../assets//image/map.gif" alt="" />
+      <img class="contact" src="../assets/image/contact.gif" alt="">
+      <img class="map" src="../assets//image/map.gif" alt="" />
     </div>
     <div class="mid">
       <div class="floatMenu">
-      <floatMenu></floatMenu>
+      <footerMenu></footerMenu>
       </div>
       <div class="OR">
         <div class="or">
@@ -35,13 +37,26 @@
   </div>
 </template>
 <script>
-import floatMenu from './floatMenu'
+import footerMenu from './footerMenu'
 export default {
   name: "page_bottom",
-  components: {floatMenu},
+  components: {footerMenu},
 };
 </script>
 <style scoped>
+.total{
+  margin: 0vw 0 0 0;
+}
+.contact{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 0.7vw;
+  box-shadow: 0px 0px 5px #A9A9A9;
+}
+.map{
+  display: block;/**解决底部留有空白 */
+}
 .mid {
   position: relative;
   background-color: rgb(45, 45, 45);

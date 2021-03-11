@@ -3,8 +3,8 @@
     <el-row>
       <el-col :span="content" id="content">
         <navheader @neu="neu"></navheader>
-        <maincontent></maincontent>
-        <pagebottom></pagebottom>
+        <maincontent class="maincontent"></maincontent>
+        <page_bottom></page_bottom>
       </el-col>
       <el-col
         :span="side">
@@ -20,10 +20,10 @@
 import navheader from "./navheader.vue";
 import navside from "./navside.vue";
 import maincontent from "./maincontent.vue";
-import pagebottom from './page-bottom.vue'
+import page_bottom from "./footer.vue";
 export default {
   name: "Main",
-  components: { navheader, maincontent, navside, pagebottom},
+  components: { navheader, maincontent, navside,page_bottom},
   data() {
     return {
       isCollapse: false,

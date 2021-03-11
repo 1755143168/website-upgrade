@@ -6,7 +6,11 @@
     <div class="card_swiper">
       <swiper class="swiper" :options="swiperOption">
         <swiper-slide v-for="(item, index) of card.img" :key="index">
-          <img :src="item" alt="" />
+          <img
+            :src="item"
+            :class="Index == index ? 'active' : ''"
+            alt=""
+          />
         </swiper-slide>
       </swiper>
       <div class="swiper-button-prev"></div>
@@ -25,12 +29,29 @@ export default {
       card: this.card_list,
       Index: 2,
       swiperOption: {
-        slidesPerView: "4",
+        slidesPerView: "5",
+        centeredSlides: true, // 重点：让active slide居中
         spaceBetween: 60,
         initialSlide: 1,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+        on: {
+          slideChangeTransitionEnd: function () {
+            this.Index = this.activeIndex; //切换结束时，告诉我现在是第几个slide
+          },
+          
+          init() {
+            this.setTranslate(0);
+          },
+          transitionStart() {
+            // 开始translate之前触发
+            // 如果是第一张
+            if (this.activeIndex == 0) {
+              this.setTranslate(0); // 因为左边会空出一张图的距离，所以设置位移为0
+            };
+          },
         },
         navigation: {
           nextEl: ".swiper-button-next",
@@ -92,6 +113,9 @@ export default {
 .swiper {
   padding: 3vw 7vw;
 }
+.swiper-slide>img{
+  box-shadow: 0 10px 10px 1px #A9A9A9 ;
+}
 .left {
   position: absolute;
   left: 1%;
@@ -99,5 +123,9 @@ export default {
 .right {
   position: absolute;
   right: 1%;
+}
+.active {
+  transform: scale(1.1); /**放大 */
+  border-image: url(../assets/image/certificate-border.gif);
 }
 </style>

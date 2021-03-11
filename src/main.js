@@ -16,6 +16,7 @@ import './assets/css/pc.css'//pc端样式
 import './assets/css/mobile.css'//手机端样式
 import App from './App'
 import router from './router'
+import store from './store/store'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -26,6 +27,7 @@ Vue.use(DrawerLayout)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

@@ -27,6 +27,7 @@ export default {
   height: 36vw;
   flex-wrap: wrap;
 }
+
 .bannerchildren{
   width: 49.89%;
   height: 49.89%;
