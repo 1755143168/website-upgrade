@@ -22,16 +22,12 @@
     </div>
     <div class="line"></div>
     <div class="bottom">
-      <!--<img src="../assets/image/bottom.gif" alt="">-->
-      <img class="copyright" src="../assets/image/copyright.gif" alt="" />
-      <div class="icon">
-        <!--分享我们-->
-        <img class="shareus" src="../assets/image/shareus.gif" alt="" />
-        <!--icon-->
-        <img class="wx" src="../assets/image/wx.gif" alt="" />
-        <img class="qq" src="../assets/image/qq.gif" alt="" />
-        <img class="xl" src="../assets/image/xl.gif" alt="" />
-      </div>
+      <img src="../assets/image/botom.gif" alt="">
+    </div>
+    <div class="bottommobile">
+      <el-row >
+        <el-col :span="6"></el-col>
+      </el-row>
     </div>
     <div class="mask"></div>
   </div>
@@ -41,6 +37,11 @@ import footerMenu from './footerMenu'
 export default {
   name: "page_bottom",
   components: {footerMenu},
+  data(){
+    return{
+      
+    }
+  }
 };
 </script>
 <style scoped>
@@ -85,14 +86,6 @@ export default {
 .line {
   height: 0.1vw;
   background-color: #808080;
-}
-.bottom {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(45, 45, 45);
-  height: 7vw;
 }
 .copyright {
   position: absolute;

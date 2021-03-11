@@ -13,7 +13,7 @@
       <img src="../assets/image/experience2.gif" alt="" />
     </div>
     <!--关于-->
-    <about></about>
+    <!--<about></about>-->
   </div>
 </template>
 

@@ -106,4 +106,25 @@
   .pcimg{
     display: none;
   }
+  .OR .or{
+    display: none;
+  }
+  .floatMenu {
+    display: none;
+  }
+  .line{
+    display: none;
+  }
+  .bottom{
+    display: none;
+  }
+  .copyright{
+    display: none;
+  }
+  .icon{
+    display: none;
+  }
+  .mid{
+    display: none;
+  }
 }

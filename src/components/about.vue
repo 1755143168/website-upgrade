@@ -59,10 +59,6 @@ export default {
 };
 </script>
 <style scoped>
-.about {
-  display: flex;
-  overflow: hidden;
-}
 
 .new {
   position: relative;

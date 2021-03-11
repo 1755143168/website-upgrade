@@ -7,7 +7,8 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 //引入swiper组件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import '../node_modules/swiper/css/swiper.css'
+//import '../node_modules/swiper/css/swiper.css'
+import '../node_modules/swiper/swiper-bundle.css'
 //引入drawer-layout
 import DrawerLayout from 'vue-drawer-layout'
 //导入全局样式

@@ -1,11 +1,11 @@
 <template>
 <div>
-  <el-row :gutter="7">
+  <el-row :gutter="0">
     <el-col class="log" :span="3"
       ><img src="../assets/image/log.gif" alt=""
     /></el-col>
     <!--导航菜单-->
-    <el-col class="menu" :span="12.5">
+    <el-col v-if="!this.$store.getters.isShow" class="menu" :span="13">
       <!--导航菜单-->
       <el-menu
         :default-active="$route.path"
@@ -23,10 +23,10 @@
         <el-menu-item index="5">
         <el-submenu>
           <template slot="title">互联网+解决方案</template>
-          <el-menu-item class="hover" index="2-1">艺培教务系统解决方案</el-menu-item>
-          <el-menu-item class="hover" index="2-2">职培在线学习解决方案</el-menu-item>
-          <el-menu-item class="hover" index="2-3">蓝领人力资源O2O解决方案</el-menu-item>
-          <el-menu-item class="hover" index="2-4">智慧弹簧互联网+解决方案</el-menu-item>
+          <el-menu-item class="hover" index="5_1">艺培教务系统解决方案</el-menu-item>
+          <el-menu-item class="hover" index="5_2">职培在线学习解决方案</el-menu-item>
+          <el-menu-item class="hover" index="5_3">蓝领人力资源O2O解决方案</el-menu-item>
+          <el-menu-item class="hover" index="5_4">智慧弹簧互联网+解决方案</el-menu-item>
         </el-submenu>
         </el-menu-item>
         <el-menu-item index="6">案例</el-menu-item>
@@ -35,7 +35,10 @@
         <el-menu-item index="9">我们</el-menu-item>
       </el-menu>
     </el-col>
-    <el-col class="earth" :span="2">
+    <el-col v-if="this.$store.getters.isShow" class="menu" :span="13">
+      <img src="../assets/image/cancle.gif" alt="" @click="cancle()">
+    </el-col>
+    <el-col class="earth" :span="1">
       <img src="../assets/image/earth.gif" alt="" />
     </el-col>
     <el-col class="track" :span="3">
@@ -54,7 +57,6 @@
       <img src="../assets/image/neu.gif" alt="" @click="neu()" />
     </el-col>
   </el-row>
-  <floatmenu class="float" v-show="floatshow"></floatmenu>
   </div>
 </template>
 <script>
@@ -64,7 +66,6 @@ export default {
   components:{floatmenu},
   data() {
     return {
-      floatshow:true,
       activeIndex:"1",
       isCollapse:false,
     };
@@ -72,13 +73,15 @@ export default {
   methods: {
     handleSelect() {},
     //打开侧边菜单
-    
     neu(){
-      this.floatshow = !this.floatshow
+      this.$store.commit('changeshow')
       /*
       this.isCollapse = !this.isCollapse
       let isCollapse = this.isCollapse
       this.$emit('neu',isCollapse)*/
+    },
+    cancle(){
+      this.$store.commit('closeshow')
     },
   },
 };
@@ -96,7 +99,7 @@ export default {
   border-bottom: none;
 }
 .menu {
-  margin: 1.5vw 0 0 2vw;
+  margin: 1vw 0 0 2vw;
 }
 .el-menu--horizontal > .el-menu-item {
   height: 5vw;
