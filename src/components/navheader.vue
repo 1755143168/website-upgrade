@@ -31,7 +31,12 @@
         </el-menu-item>
         <el-menu-item index="6">案例</el-menu-item>
         <el-menu-item index="7">新闻</el-menu-item>
-        <el-menu-item index="8">人才</el-menu-item>
+          <el-submenu>
+          <template slot="title">人才</template>
+            <el-menu-item class="hover" index="8_1">基本法</el-menu-item>
+            <el-menu-item class="hover" index="8_2">企业文化</el-menu-item>
+            <el-menu-item class="hover" index="8_3">招聘职位</el-menu-item>
+            </el-submenu>
         <el-menu-item index="9">我们</el-menu-item>
       </el-menu>
     </el-col>

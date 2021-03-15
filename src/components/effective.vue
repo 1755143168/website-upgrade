@@ -22,4 +22,7 @@ export default {
 }
 </script>
 <style scoped>
+div{
+  border-radius: 50%;
+}
 </style>

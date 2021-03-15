@@ -10,12 +10,15 @@ import arttrain from "../components/arttrain.vue"
 import vocationaltrain from "../components/vocationaltrain.vue"
 import widom from "../components/wisdom.vue"
 import humanresources from "../components/humanresources.vue"
+import news from "../components/news.vue"
+import basicLaw from "../components/basicLaw.vue"
+import Recruitment from "../components/Recruitment.vue"
 
 Vue.use(Router)
 
 export default new Router({
   routes: [{
-    path: '/',
+    path: '/1',
     //name: 'Main',
     component: Main,
     children: [{
@@ -37,20 +40,35 @@ export default new Router({
       {
         path: '/5',
         component: internet,
-        children: [{
-          path: '5_1',
-          component: (resolve)=>require(['../components/home.vue'],resolve)
-        }, {
-          path: '5_2',
-          component: vocationaltrain
-        }, {
-          path: '5_3',
-          component: widom
-        }, {
-          path: '5_4',
-          component: humanresources
-        }]
-      }, //互联网+~~~艺培~~职培~~智慧弹簧~~人力资源
+      },
+      {
+        path: '/5_1',
+        component: arttrain //艺培
+      },
+      {
+        path: '/5_2',
+        component: vocationaltrain //职培
+      },
+      {
+        path: '/5_4',
+        component: widom //智慧弹簧
+      },
+      {
+        path: '/5_3',
+        component: humanresources //人力资源
+      },
+      {
+        path: '/7',
+        component: news //新闻页
+      },
+      {
+        path: '/8_1',
+        component: basicLaw//基本法
+      },
+      {
+        path: '/8_3',
+        component: Recruitment//招聘
+      },
     ]
   }, ]
 })

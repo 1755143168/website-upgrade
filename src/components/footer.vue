@@ -48,6 +48,12 @@ export default {
 .total{
   margin: 0vw 0 0 0;
 }
+.map{
+  width: 100%;
+}
+.bottom>img{
+  width: 100%;
+}
 .contact{
   position: absolute;
   left: 50%;

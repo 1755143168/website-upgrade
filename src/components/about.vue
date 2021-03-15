@@ -1,43 +1,61 @@
 <template>
   <div class="about">
-    <div class="new">
-      <div class="title_new">
-        <img src="../assets/image/Kgunew.gif" alt="" />
-      </div>
-      <el-row>
-        <el-col :span="8" v-for="(item, index) in aboutlist" :key="index">
-          <el-card shadow="hover">
-            <img :src="item.img" alt="" />
-          </el-card>
-        </el-col>
-      </el-row>
-    </div>
-    <div class="Kgu_about">
-      <div class="title_about">
-        <img src="../assets/image/Kgu_about.gif" alt="" />
-      </div>
-      <!--pdf-->
-      <div class="pdf">
-        <img src="../assets/image/huawei.gif" alt="" />
-        <img src="../assets/image/ali.gif" alt="" />
-      </div>
-      <div class="download">
-        <img src="../assets/image/dowload.gif" alt="" />
-      </div>
-      <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        mode="horizontal"
-        background-color="#F5F5F5"
-        text-color="black"
-        active-text-color="red"
-        @select="handleSelect"
-      >
-        <el-menu-item index="1">基本法</el-menu-item>
-        <el-menu-item index="2">企业文化</el-menu-item>
-        <el-menu-item index="3">招聘职位</el-menu-item>
-      </el-menu>
-    </div>
+    <el-row>
+      <el-col :span="16" class="news">
+        <div class="title">
+          <img src="../assets/image/new_title.gif" alt="" />
+        </div>
+        <a class="more">
+          <span>查看更多></span>
+        </a>
+        <el-row class="card">
+          <el-col :span="8" v-for="(item, index) in aboutlist" :key="index">
+            <el-card class="newscard">
+              <img class="content" :src="item.img" alt="" />
+              <img class="to" src="../assets/image/to.gif" alt="" />
+            </el-card>
+          </el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="8" class="about">
+        <div class="about_title">
+          <img src="../assets/image/about.gif" alt="" />
+        </div>
+        <el-row class="card">
+          <el-col :span="16" class="aboutcol">
+            <el-row :gutter="10">
+              <el-col
+                :span="12"
+                class="aboutcard"
+                v-for="(item, index) in certificateList"
+                :key="index"
+              >
+                <el-card>
+                  <img class="certificate" :src="item.img" alt="" />
+                </el-card>
+              </el-col>
+            </el-row>
+            <img class="dowload" src="../assets/image/dowload.gif" alt="">
+            <el-menu :default-active="aboutactiveIndex" class="el-menu-demo" mode="horizontal" @select="abouthandleSelect" background-color="	#F5F5F5" active-text-color="#DE0515">
+              <el-row>
+              <el-col :span="8">
+              <el-menu-item index="basicLaw">基本法</el-menu-item>
+              </el-col>
+              <el-col :span="8">
+              <el-menu-item index="companyCulture">企业文化</el-menu-item>
+              </el-col>
+              <el-col :span="8">
+              <el-menu-item index="recruitment">招聘职位</el-menu-item>
+              </el-col>
+              </el-row>
+            </el-menu>
+          </el-col>
+          <el-col :span="8">
+            
+          </el-col>
+        </el-row>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
@@ -51,67 +69,84 @@ export default {
         { img: require("../assets/image/about2.gif") },
         { img: require("../assets/image/about3.gif") },
       ],
+      certificateList: [
+        { img: require("../assets/image/huawei.gif") },
+        { img: require("../assets/image/ali.gif") },
+      ],
     };
   },
   methods: {
-    handleSelect(){}
+    handleSelect() {},
   },
 };
 </script>
 <style scoped>
-
-.new {
-  position: relative;
-  width: 60%;
-  padding: 4vw 2vw 0 4vw; /*上右下左 */
+.news {
+  padding: 3vw 5vw 10vw 8vw;
+  display: flex;
+  flex-direction: column;
 }
-.title_new {
-  position: absolute;
-  left: 5vw;
+.about {
+  display: flex;
+  padding: 3vw 3vw 0 0;
+  flex-direction: column;
 }
-.el-row {
-  position: absolute;
-  top: 10vw;
+.title > img {
+  float: left;
 }
-.Kgu_about {
-  position: relative;
-  width: 30%;
-  padding: 4vw 0 0 0; /*上右下左 */
+.about_title > img {
+  float: left;
 }
-.title_about {
-  position: absolute;
-  left: 5vw;
-}
-.pdf {
-  position: absolute;
-  left: 5vw;
-  top: 10vw;
-}
-.pdf > img {
+.more {
+  height: 1.5vw;
   padding: 0 1vw 0 0;
 }
-.download {
-  position: absolute;
-  left: 5vw;
-  top: 23vw;
+.more > span {
+  float: right;
+  font-size: 1.1rem;
 }
-.el-menu{
-  position: absolute;
-  left: 5vw;
-  top: 28vw;
-  font-weight: 800;
+.card {
+  display: flex;
+  flex-direction: row;
 }
-.el-menu-item{
-  padding: 0 1.75vw;
+.newscard {
+  padding: 0.6vw;
 }
-.el-card__body {
-  padding: 0;
+.aboutcol {
+  margin: 2vw 0.7vw 0.5vw 0;
 }
-.el-card > img {
+.aboutcard{
+  padding: 0 0vw 1vw 0;
+}
+.certificate {
   width: 100%;
 }
-/*去掉菜单的下划线 */
-.el-menu.el-menu--horizontal {
-  border-bottom: 0;
+.dowload{
+  width: 100%;
+}
+.to {
+  width: 15%;
+  height: 20%;
+  float: left;
+  display: none;
+}
+.content {
+  width: 100%;
+}
+/**悬停阴影 */
+.newscard:hover {
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
+  border-bottom: 0.3vw solid crimson;
+}
+/**要加空格 */
+.newscard:hover .to {
+  display: inline;
+}
+/**消去el-card的阴影 */
+.newscard {
+  box-shadow: none;
+}
+.el-menu.el-menu--horizontal{
+  border: none;
 }
 </style>
